@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Press+Start+2P&family=Rubik&family=Rubik+Bubbles&display=swap');
+*{
+    margin: 0;
+}
+body{
+    min-height: 100vh;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+}
+/* header */
+header{
+    background: linear-gradient(90deg,  #1b9dc2, rgb(241, 74, 74));
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+header h1{
+    font-family: 'Rubik Bubbles', serif;
+    font-size: 60px;
+    color: white;
+    -webkit-text-stroke: 1px black;
+}
+header h3{
+    margin-top: 20px;
+}
+header button{
+    background-color:rgb(201, 74, 74);
+    color: whitesmoke;
+    font-weight: bolder;
+    padding: 10px;
+    width: 150px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 3px 3px black;
+    cursor: pointer;
+    margin-top: 10px;
+}
+header button:hover{
+    background-color: #333;
+}
+header #roundResult{
+    position: fixed;
+    top: 250px;
+    font-family: 'Rubik Bubbles', serif;
+    font-weight: bolder;
+    border-radius: 20px;
+    font-size: 30px;
+    -webkit-text-stroke: 1px black;
+    padding: 15px;
+}
+/* main section */
+.mainSection{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: url("../images/stage.gif");
+    background-size: cover;
+    background-position-y: 500px;
+   
+}
+.playerSide{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.playerSide h1{
+    text-align: center;
+    padding-top: 20px;
+    color: lightgoldenrodyellow;
+}
+.yourScore{
+    width: 200px;
+    height: 20px;
+    background: gray;
+    box-shadow: 1px 1px 2px 2px silver;
+}
+#yourScore{
+    width: 200px;
+    height: 20px;
+    background: blue;
+    box-shadow: 1px 1px 2px 2px silver;
+}
+#playerPick{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.playerChar{
+    height: 150px;
+    position: fixed;
+    top: 450px;
+    float: block;
+}
+.computerSide{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.enemyScore{
+    width: 200px;
+    height: 20px;
+    background: gray;
+    box-shadow: 1px 1px 2px 2px silver;
+}
+#enemyScore{
+    width: 200px;
+    height: 20px;
+    background: red;
+    box-shadow: 1px 1px 2px 2px silver;
+}
+#computerPick{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.computerChar{
+    height: 150px;
+    position: fixed;
+    top: 450px;
+}
+.computerSide h1{
+    text-align: center;
+    padding-top: 20px;
+    color: lightgoldenrodyellow;
+}
+.signPicked{
+    font-size: 12px;
+    margin-top: 120px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    box-shadow: 2px 2px 5px 5px black;
+    font-family: 'Press Start 2P', serif;
+    font-weight: bolder;
+}
+.loserDisplay{
+    height: 150px;
+}
+.damage{
+    color: red;
+    font-size: 20px;
+    position: relative;
+    bottom: 25px;
+    padding-left: 220px;
+    animation: fadeIn 2s ease-in;
+    animation: fadeOut 3s forwards;
+}
+@keyframes fadeOut {
+    0% { opacity: 0; }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100%{
+        opacity: 0;
+        position: fixed;
+        z-index: -5;
+    }
+}
+/* picking section and match history */
+.pickingSection{
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+}
+.playerSelect{
+    padding: 0 50px;
+    text-align: center;
+    background: url("../images/dogpaws.jpg");
+    background-color: #287b92;
+    background-blend-mode: multiply;
+    width: 35%;
+    padding-top: 20px;
+    color: lightgoldenrodyellow;
+}
+.playerSelect img{
+    height: 150px;
+    cursor: pointer;
+}
+.playerSelect button{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: #287b92;
+}
+.matchHistory{
+    background-color: #aaa;
+    width: 25%;
+}
+.matchHistory h1{
+    text-align: center;
+}
+#matchHistory{
+    height: 250px;
+    overflow-y: auto;
+    text-align: center;
+}
+#matchHistory .win{
+    color: green;
+}
+#matchHistory .tie{
+    color: blue;
+}
+#matchHistory .lose{
+    color: red;
+}
+.computerSelect{
+    padding: 0 50px;
+    text-align: center;
+    background: url("../images/catpaws.jpg");
+    background-color: rgb(201, 74, 74);
+    background-blend-mode: multiply;
+    width: 35%;
+    padding-top: 20px;
+    color: lightgoldenrodyellow;
+}
+.computerSelect img{
+    height: 150px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgb(201, 74, 74);
+}
+
+
+
+@media (max-width: 1625px){
+    .playerSelect button, .computerSelect img{
+        padding: 0;
+    }
+}
+@media (max-width: 1460px){
+    .playerSelect, .computerSelect{
+        width: 32%;
+    }
+    .playerChar, .computerChar{
+        top: 480px;
+    }
+    .matchHistory{
+        width: 36%;
+    }
+    .playerSelect img, .computerSelect img{
+        height: 100px;
+    }
+    .playerSelect button, .computerSelect img{
+        margin-top: 70px;
+    }
+}
+@media (max-width: 1165px){
+    .computerSelect{
+        display: none;
+    }
+    .playerSelect, .matchHistory{
+        width: 50%;
+        padding: 0;
+    }
+    .playerSelect{
+        padding-top: 20px;
+    }
+}
+@media (max-width: 685px){
+    header h1{
+        font-size: 35px;
+    }
+    header h4{
+        font-size: 20px;
+    }
+    .playerSide img, .computerSide img{
+        height: 150px;
+    }
+    .playerSelect img{
+        height: 60px;
+    }
+    .win, .lose, .tie{
+        font-size: 10px;
+    }
+}
+@media (max-width: 484px){
+    header h1{
+        font-size: 25px;
+    }
+    header h4{
+        font-size: 15px;
+    }
+    header h3{
+        font-size: 30px !important;
+    }
+    .playerSide h1, .computerSide h1, .playerSelect h1{
+        font-size: 15px;
+    }
+
+    .yourScore, .enemyScore{
+        width: 150px;
+    }
+    #yourScore, #enemyScore{
+        width: 150px;
+    }
+    .signPicked{
+        font-size: 8px;
+    }
+}
+@media (max-width: 375px){
+
+    .playerSelect{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
+    .playerSelect button{
+        margin: 0;
+        padding: 0;
+    }
+}
+@media (max-width: 281px){
+    header{
+        height: auto;
+    }
+    .yourScore, .enemyScore{
+        width: 120px;
+    }
+    #yourScore, #enemyScore{
+        width: 120px;
+    }
+    .playerSide img, .computerSide img{
+        margin-top: 0;
+    }
+    .pickingSection{
+        height: auto;
+    }
+}
+
